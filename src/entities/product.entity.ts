@@ -1,13 +1,12 @@
-import { Entity, Column } from "typeorm";
-import { ObjectIdColumn } from "typeorm/decorator/columns/ObjectIdColumn";
+import { Entity, Column, ObjectID, ObjectIdColumn } from "typeorm";
 
 @Entity({ name: "products" })
 export class Product {
   @ObjectIdColumn()
-  id: number;
+  _id: ObjectID;
 
   @Column({ unique: true })
-  admin_id: string;
+  admin_id: number;
 
   @Column()
   title: string;
